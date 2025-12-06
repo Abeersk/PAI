@@ -1,0 +1,111 @@
+/**
+ * Copyright (c) 2017-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/* You can override the default Docusaurus styling here. */
+:root {
+  /* Primary Colors */
+  --primary-blue: #0066FF;
+  --secondary-purple: #7B2CBF;
+  --accent-cyan: #00E5FF;
+  --success-green: #00C853;
+
+  /* Neutral Colors */
+  --dark-bg: #0A0E27;
+  --light-bg: #F8F9FA;
+  --dark-text: #E8EAED;
+  --light-text: #1A1D2E;
+
+  /* Gradients */
+  --hero-gradient-dark: linear-gradient(135deg, #0A0E27 0%, #1A1D4A 50%, #2D1B69 100%);
+  --hero-gradient-light: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  --accent-gradient: linear-gradient(90deg, #0066FF 0%, #00E5FF 100%);
+
+  /* Typography */
+  --font-family-primary: 'Inter', 'Poppins', sans-serif;
+  --font-family-secondary: 'Roboto', 'Open Sans', sans-serif;
+  --font-family-code: 'Fira Code', 'JetBrains Mono', monospace;
+
+  /* Override default Docusaurus colors */
+  --ifm-color-primary: #0066FF;
+  --ifm-color-primary-dark: #005ae6;
+  --ifm-color-primary-darker: #0052d6;
+  --ifm-color-primary-darkest: #0042ac;
+  --ifm-color-primary-light: #1a78ff;
+  --ifm-color-primary-lighter: #2a82ff;
+  --ifm-color-primary-lightest: #4d96ff;
+  --ifm-code-font-size: 95%;
+}
+
+/* Dark theme variables */
+[data-theme='dark'] {
+  --ifm-background-color: #0A0E27;
+  --ifm-card-background-color: #1A1D4A;
+  --ifm-heading-color: #E8EAED;
+  --ifm-color-emphasis-100: #1A1D4A;
+  --ifm-color-emphasis-200: #2D1B69;
+  --ifm-color-emphasis-600: #B0B7C5;
+  --ifm-color-emphasis-700: #C4C9D5;
+  --ifm-color-emphasis-800: #D8DBE2;
+}
+
+/* Light theme variables */
+[data-theme='light'] {
+  --ifm-background-color: #F8F9FA;
+  --ifm-card-background-color: white;
+  --ifm-heading-color: #1A1D2E;
+  --ifm-color-emphasis-100: #F1F3F5;
+  --ifm-color-emphasis-200: #E9ECEF;
+  --ifm-color-emphasis-600: #6C757D;
+  --ifm-color-emphasis-700: #495057;
+  --ifm-color-emphasis-800: #343A40;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom styles for textbook */
+.textbook-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.chapter-content {
+  line-height: 1.8;
+}
+
+.math-equation {
+  text-align: center;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #0066FF;
+}
+
+.code-example {
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Button outline style */
+.button--outline {
+  background: transparent;
+  border: 2px solid currentColor;
+  color: currentColor;
+}
+
+html[data-theme='dark'] .button--outline {
+  color: white;
+}

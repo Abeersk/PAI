@@ -25,12 +25,12 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "C:\\Users\\NAD\\Desktop\\all-work\\hackathon\\specify\\check-book\\docs\\sidebars.js",
+          "sidebarPath": "C:\\Users\\NAD\\Desktop\\all-work\\hackathon\\specify\\check-book\\frontend\\sidebars.js",
           "editUrl": "https://github.com/specify/physical-ai-textbook/tree/main/packages/create-docusaurus/templates/shared/"
         },
         "blog": false,
         "theme": {
-          "customCss": "C:\\Users\\NAD\\Desktop\\all-work\\hackathon\\specify\\check-book\\docs\\src\\css\\custom.css"
+          "customCss": "C:\\Users\\NAD\\Desktop\\all-work\\hackathon\\specify\\check-book\\frontend\\src\\css\\custom.css"
         }
       }
     ]

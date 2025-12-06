@@ -1,0 +1,83 @@
+.technologies {
+  padding: 4rem 0;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+html[data-theme='dark'] .technologies {
+  background-color: var(--ifm-background-color);
+}
+
+.technologiesTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-heading-color);
+}
+
+.technologiesSubtitle {
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 3rem;
+}
+
+.techItem {
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.techCardContent {
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--ifm-card-background-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.techCardContent:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-color: #0066FF;
+}
+
+.techName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  margin-bottom: 0.5rem;
+}
+
+.techDescription {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+@media (max-width: 996px) {
+  .techItem {
+    padding: 0 0.5rem;
+  }
+
+  .technologiesTitle {
+    font-size: 2rem;
+  }
+
+  .techCardContent {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .techItem {
+    margin-bottom: 1.5rem;
+  }
+
+  .row {
+    row-gap: 1.5rem;
+  }
+}

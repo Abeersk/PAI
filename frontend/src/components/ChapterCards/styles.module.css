@@ -1,0 +1,128 @@
+.chapters {
+  padding: 4rem 0;
+  background-color: var(--ifm-background-color);
+}
+
+.chaptersTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-heading-color);
+}
+
+.chaptersSubtitle {
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 3rem;
+}
+
+.chapterCard {
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.chapterCardContent {
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--ifm-card-background-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.chapterCardContent:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: linear-gradient(135deg, #0066FF 0%, #00E5FF 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.chapterTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem 0;
+  color: var(--ifm-heading-color);
+  line-height: 1.4;
+}
+
+.chapterDescription {
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.topic {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-800);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.chapterLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0066FF;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.chapterLink:hover {
+  color: #00E5FF;
+  text-decoration: underline;
+}
+
+.viewAllButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 996px) {
+  .chapterCard {
+    padding: 0 0.5rem;
+  }
+
+  .chaptersTitle {
+    font-size: 2rem;
+  }
+
+  .chapterCardContent {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chapterCard {
+    margin-bottom: 1.5rem;
+  }
+
+  .topics {
+    justify-content: center;
+  }
+}
