@@ -208,3 +208,10 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- Python 3.10+ (for code examples) + numpy, scipy, matplotlib, opencv-python, pybullet (001-physical-ai-textbook)
+- Markdown files, BibTeX for citations, SVG/PNG for figures (001-physical-ai-textbook)
+
+## Recent Changes
+- 001-physical-ai-textbook: Added Python 3.10+ (for code examples) + numpy, scipy, matplotlib, opencv-python, pybullet

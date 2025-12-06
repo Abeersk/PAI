@@ -1,0 +1,70 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .axis { stroke: #000; stroke-width: 2; }
+    .link { fill: #d3d3d3; stroke: #a9a9a9; stroke-width: 2; }
+    .joint { fill: #ff6b6b; stroke: #d63031; stroke-width: 2; }
+    .arrow { stroke: #000; stroke-width: 2; marker-end: url(#arrowhead); }
+    .label { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+    .dimension { stroke: #0066cc; stroke-width: 2; stroke-dasharray: 5,5; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Link representation -->
+  <rect x="200" y="250" width="200" height="40" class="link" />
+
+  <!-- Joint 1 (Origin) -->
+  <circle cx="200" cy="270" r="8" class="joint" />
+  <text x="190" y="265" class="label">Joint 1</text>
+
+  <!-- Joint 2 -->
+  <circle cx="400" cy="270" r="8" class="joint" />
+  <text x="390" y="265" class="label">Joint 2</text>
+
+  <!-- Coordinate frames -->
+  <!-- Frame 1 -->
+  <line x1="200" y1="270" x2="230" y2="270" class="axis" />
+  <line x1="200" y1="270" x2="200" y2="240" class="axis" />
+  <text x="232" y="275" class="label">x₁</text>
+  <text x="195" y="235" class="label">z₁</text>
+
+  <!-- Frame 2 -->
+  <line x1="400" y1="270" x2="430" y2="270" class="axis" />
+  <line x1="400" y1="270" x2="400" y2="240" class="axis" />
+  <text x="432" y="275" class="label">x₂</text>
+  <text x="395" y="235" class="label">z₂</text>
+
+  <!-- DH Parameters visualization -->
+  <!-- a (translation along x) -->
+  <line x1="200" y1="290" x2="400" y2="290" class="dimension" />
+  <line x1="200" y1="285" x2="200" y2="295" class="dimension" />
+  <line x1="400" y1="285" x2="400" y2="295" class="dimension" />
+  <text x="280" y="285" class="label">a (link length)</text>
+
+  <!-- d (translation along z) -->
+  <line x1="180" y1="270" x2="180" y2="310" class="dimension" />
+  <line x1="175" y1="270" x2="185" y2="270" class="dimension" />
+  <line x1="175" y1="310" x2="185" y2="310" class="dimension" />
+  <text x="150" y="295" class="label">d (link offset)</text>
+
+  <!-- alpha (rotation about x) -->
+  <path d="M200,270 A30,30 0 0,1 225,245" fill="none" stroke="#0066cc" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="210" y="255" class="label">α (twist)</text>
+
+  <!-- theta (rotation about z) -->
+  <path d="M200,270 A40,40 0 0,0 175,250" fill="none" stroke="#0066cc" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="160" y="260" class="label">θ (joint angle)</text>
+
+  <!-- Title -->
+  <text x="300" y="40" class="label" font-size="18">DH Parameter Definitions</text>
+
+  <!-- Explanation text -->
+  <text x="100" y="350" class="label" font-size="14">θ: Joint angle - rotation about z-axis</text>
+  <text x="100" y="370" class="label" font-size="14">d: Link offset - translation along z-axis</text>
+  <text x="100" y="390" class="label" font-size="14">a: Link length - translation along x-axis</text>
+  <text x="100" y="410" class="label" font-size="14">α: Twist angle - rotation about x-axis</text>
+</svg>

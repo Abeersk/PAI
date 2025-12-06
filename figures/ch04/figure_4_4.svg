@@ -1,0 +1,113 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .robot-link { fill: #d3d3d3; stroke: #a9a9a9; stroke-width: 8; stroke-linecap: round; }
+    .joint { fill: #ff6b6b; stroke: #d63031; stroke-width: 2; }
+    .end-effector { fill: #4ecdc4; stroke: #00b894; stroke-width: 2; }
+    .workspace { fill: #f8f9fa; stroke: #dee2e6; stroke-width: 2; }
+    .velocity-vector { stroke: #e17055; stroke-width: 3; marker-end: url(#arrowhead); }
+    .null-space { fill: none; stroke: #636e72; stroke-width: 2; stroke-dasharray: 5,5; }
+    .singular { fill: #e17055; stroke: #d63031; stroke-width: 3; }
+    .label { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+    .condition-number { fill: #00b894; stroke: #00a085; stroke-width: 2; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e17055"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="200" y="40" class="label" font-size="18">Jacobian Singularity: Loss of Mobility in Robot Manipulator</text>
+
+  <!-- Non-singular configuration (left side) -->
+  <g transform="translate(100, 300)">
+    <text x="0" y="-100" class="label" font-size="14">Non-Singular Configuration</text>
+
+    <!-- Robot structure -->
+    <line x1="0" y1="0" x2="100" y2="-80" class="robot-link" />
+    <circle cx="0" cy="0" r="6" class="joint" />
+    <circle cx="100" cy="-80" r="6" class="joint" />
+    <line x1="100" y1="-80" x2="200" y2="-120" class="robot-link" />
+    <circle cx="200" cy="-120" r="8" class="end-effector" />
+
+    <!-- Velocity vectors (able to move in all directions) -->
+    <line x1="200" y1="-120" x2="230" y2="-120" class="velocity-vector" />
+    <line x1="200" y1="-120" x2="200" y2="-150" class="velocity-vector" />
+    <line x1="200" y1="-120" x2="220" y2="-140" class="velocity-vector" />
+
+    <text x="235" y="-115" class="label">v_x</text>
+    <text x="195" y="-155" class="label">v_y</text>
+    <text x="225" y="-145" class="label">v_θ</text>
+
+    <!-- Condition number indicator -->
+    <circle cx="50" cy="20" r="15" class="condition-number" />
+    <text x="40" y="25" class="label">κ=5</text>
+  </g>
+
+  <!-- Singular configuration (right side) -->
+  <g transform="translate(500, 300)">
+    <text x="0" y="-100" class="label" font-size="14">Singular Configuration</text>
+
+    <!-- Robot structure - fully extended (singular) -->
+    <line x1="0" y1="0" x2="100" y2="0" class="robot-link" />
+    <circle cx="0" cy="0" r="6" class="joint" />
+    <circle cx="100" cy="0" r="6" class="joint" />
+    <line x1="100" y1="0" x2="200" y2="0" class="robot-link" />
+    <circle cx="200" cy="0" r="8" class="end-effector" />
+
+    <!-- Velocity vectors (limited mobility) -->
+    <line x1="200" y1="0" x2="230" y2="0" class="velocity-vector" />
+    <line x1="200" y1="0" x2="170" y2="0" class="velocity-vector" />
+
+    <text x="235" y="5" class="label">v_x</text>
+    <text x="145" y="5" class="label">-v_x</text>
+
+    <!-- No y-direction movement possible -->
+    <text x="180" y="30" class="label" font-size="12">No y-motion!</text>
+
+    <!-- Condition number indicator -->
+    <circle cx="50" cy="20" r="15" class="singular" />
+    <text x="35" y="25" class="label">κ=∞</text>
+  </g>
+
+  <!-- Workspace visualization -->
+  <g transform="translate(300, 500)">
+    <text x="-100" y="-30" class="label" font-size="14">Workspace with Singularity Regions</text>
+
+    <!-- Workspace boundary -->
+    <circle cx="0" cy="0" r="80" class="workspace" />
+
+    <!-- Singularity points -->
+    <circle cx="0" cy="-80" r="6" class="singular" />
+    <circle cx="0" cy="80" r="6" class="singular" />
+    <circle cx="80" cy="0" r="6" class="singular" />
+    <circle cx="-80" cy="0" r="6" class="singular" />
+
+    <!-- Singularity curves -->
+    <path d="M-60,-60 C-30,-90 30,-90 60,-60" class="null-space" />
+    <path d="M-60,60 C-30,90 30,90 60,60" class="null-space" />
+
+    <text x="-10" y="-85" class="label" font-size="10">Singularity</text>
+    <text x="-10" y="90" class="label" font-size="10">Points</text>
+  </g>
+
+  <!-- Jacobian matrix representation -->
+  <g transform="translate(550, 100)">
+    <text x="0" y="0" class="label" font-size="12">Jacobian Matrix:</text>
+    <text x="0" y="20" class="label" font-size="12">J(q) = [∂f/∂q₁ ∂f/∂q₂ ... ∂f/∂qₙ]</text>
+    <text x="0" y="40" class="label" font-size="12">ẋ = J(q)q̇</text>
+    <text x="0" y="60" class="label" font-size="12">Singular when: det(JᵀJ) = 0</text>
+  </g>
+
+  <!-- Explanation text -->
+  <text x="50" y="560" class="label" font-size="12">Singularity: Robot loses instantaneous mobility in certain directions</text>
+  <text x="50" y="580" class="label" font-size="12">Jacobian becomes rank-deficient; inverse doesn't exist; joint velocities may become very large</text>
+
+  <!-- Damped least squares solution -->
+  <g transform="translate(50, 100)">
+    <text x="0" y="0" class="label" font-size="12">Damped Least Squares:</text>
+    <text x="0" y="20" class="label" font-size="12">J⁺ = (JᵀJ + λ²I)⁻¹Jᵀ</text>
+    <text x="0" y="40" class="label" font-size="12">Where λ increases near singularities</text>
+  </g>
+</svg>

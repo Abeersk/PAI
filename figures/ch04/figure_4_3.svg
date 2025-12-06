@@ -1,0 +1,92 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .workspace { fill: #f8f9fa; stroke: #dee2e6; stroke-width: 2; }
+    .robot-link { fill: #d3d3d3; stroke: #a9a9a9; stroke-width: 8; stroke-linecap: round; }
+    .joint { fill: #ff6b6b; stroke: #d63031; stroke-width: 2; }
+    .end-effector { fill: #4ecdc4; stroke: #00b894; stroke-width: 2; }
+    .target { fill: #fdcb6e; stroke: #e17055; stroke-width: 3; }
+    .reachable { fill: #a29bfe; stroke: #6c5ce7; stroke-width: 2; stroke-dasharray: 5,5; }
+    .unreachable { fill: #fab1a0; stroke: #e17055; stroke-width: 2; stroke-dasharray: 5,5; }
+    .solution-path { fill: none; stroke: #00b894; stroke-width: 3; }
+    .solution-point { fill: #00b894; stroke: #00a085; stroke-width: 2; }
+    .label { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+    .multiple-solution { fill: #fd79a8; stroke: #e84393; stroke-width: 2; }
+  </style>
+
+  <!-- Workspace boundary -->
+  <circle cx="400" cy="350" r="200" class="workspace" />
+
+  <!-- Robot base -->
+  <rect x="390" y="450" width="20" height="30" fill="#34495e" />
+  <text x="380" y="490" class="label">Base</text>
+
+  <!-- Reachable workspace (circle) -->
+  <circle cx="400" cy="350" r="150" class="reachable" />
+  <text x="560" y="200" class="label">Reachable Workspace</text>
+
+  <!-- Unreachable area -->
+  <circle cx="400" cy="350" r="80" class="unreachable" />
+  <text x="300" y="180" class="label">Unreachable Area</text>
+
+  <!-- Robot in multiple configurations reaching same target -->
+  <!-- Configuration 1: Elbow-up -->
+  <line x1="400" y1="450" x2="320" y2="300" class="robot-link" />
+  <circle cx="320" cy="300" r="6" class="joint" />
+  <line x1="320" y1="300" x2="250" y2="200" class="robot-link" />
+  <circle cx="250" cy="200" r="6" class="joint" />
+  <line x1="250" y1="200" x2="200" y2="150" class="robot-link" />
+  <circle cx="200" cy="150" r="8" class="end-effector" />
+
+  <!-- Configuration 2: Elbow-down -->
+  <line x1="400" y1="450" x2="480" y2="300" class="robot-link" />
+  <circle cx="480" cy="300" r="6" class="joint" />
+  <line x1="480" y1="300" x2="550" y2="200" class="robot-link" />
+  <circle cx="550" cy="200" r="6" class="joint" />
+  <line x1="550" y1="200" x2="600" y2="150" class="robot-link" />
+  <circle cx="600" cy="150" r="8" class="end-effector" />
+
+  <!-- Target position -->
+  <circle cx="200" cy="150" r="12" class="target" />
+  <text x="190" y="140" class="label">Target</text>
+
+  <!-- Another target for unreachable -->
+  <circle cx="100" cy="100" r="12" class="target" />
+  <text x="90" y="90" class="label">Target</text>
+
+  <!-- Multiple solution points -->
+  <circle cx="200" cy="150" r="6" class="multiple-solution" />
+  <circle cx="600" cy="150" r="6" class="multiple-solution" />
+  <text x="150" y="130" class="label">Multiple Solutions</text>
+
+  <!-- Singularity points -->
+  <circle cx="550" cy="450" r="6" class="multiple-solution" />
+  <circle cx="250" cy="450" r="6" class="multiple-solution" />
+  <text x="450" y="440" class="label">Singularity Configurations</text>
+
+  <!-- Solution space visualization -->
+  <circle cx="400" cy="350" r="5" fill="#00b894" />
+  <text x="370" y="345" class="label">Configuration Space</text>
+
+  <!-- Title -->
+  <text x="250" y="40" class="label" font-size="18">Inverse Kinematics: Solution Space Visualization</text>
+
+  <!-- Legend -->
+  <rect x="50" y="520" width="20" height="20" fill="#ff6b6b" />
+  <text x="75" y="535" class="label">Joints</text>
+
+  <rect x="150" y="520" width="20" height="20" fill="#d3d3d3" />
+  <text x="175" y="535" class="label">Links</text>
+
+  <rect x="250" y="520" width="20" height="20" fill="#4ecdc4" />
+  <text x="275" y="535" class="label">End-Effector</text>
+
+  <rect x="375" y="520" width="20" height="20" fill="#fdcb6e" />
+  <text x="400" y="535" class="label">Target Position</text>
+
+  <rect x="500" y="520" width="20" height="20" fill="#fd79a8" />
+  <text x="525" y="535" class="label">Multiple Solutions</text>
+
+  <!-- Explanation text -->
+  <text x="50" y="560" class="label" font-size="12">IK Challenge: Multiple configurations can achieve the same end-effector position</text>
+  <text x="50" y="580" class="label" font-size="12">Solution selection requires additional criteria (e.g., joint limits, obstacle avoidance)</text>
+</svg>
