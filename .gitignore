@@ -77,3 +77,8 @@ docs/_build/
 
 # Node modules
 node_modules/
+
+# Docusaurus
+frontend/.docusaurus/
+frontend/build/
+frontend/.cache/
