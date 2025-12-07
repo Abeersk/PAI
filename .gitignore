@@ -45,10 +45,7 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Data files
-*.csv
-*.json
-*.xml
+
 
 # Environment specific
 .env*
