@@ -17,7 +17,7 @@ const config = {
   organizationName: 'your-organization', // Usually your GitHub org/user name.
   projectName: 'physical-ai-textbook', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',

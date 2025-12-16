@@ -27,4 +27,4 @@ This module emphasizes conceptual understanding over implementation details, mak
 
 ## Additional Resources
 
-- [Visual Diagrams and Flowcharts](./diagrams.md) - Comprehensive collection of diagrams referenced throughout the module
+- [Visual Diagrams and Flowcharts](./diagrams) - Comprehensive collection of diagrams referenced throughout the module
